@@ -70,6 +70,20 @@ Frontend: HTML, CSS, Bootstrap 5, Bootstrap Icons
 Database: SQLite (Default for development, easily swappable with PostgreSQL, MySQL, etc.)
 (Optional) DevOps: Docker, Jenkins (if implemented)
 
+📸 Screenshots
+(Add screenshots of your application here by replacing the placeholders below with markdown image syntax:
+)
+Book List Page:
+![Screenshot 2025-04-25 101831](https://github.com/user-attachments/assets/61d25269-95d6-4ac3-a28b-b1563e5a6dc0)
+Book Detail Page:
+![Screenshot 2025-04-25 101903](https://github.com/user-attachments/assets/b1f02b1c-bf03-4586-9f2d-643ad1d48449)
+Shopping Cart:
+![Screenshot 2025-04-25 102206](https://github.com/user-attachments/assets/dd1ea032-f230-410a-909c-c20bddb89bd9)
+Login/Signup Page:
+![Screenshot 2025-04-25 101931](https://github.com/user-attachments/assets/8f6deca0-7618-4bea-8c48-0b4fc02184a6)
+![Screenshot 2025-04-25 102000](https://github.com/user-attachments/assets/06522a34-8d8c-428c-9247-f3764b6dd782)
+
+
 🐳 (Optional) Docker Notes
 (Include this section if you have Docker configured, otherwise remove it)
 Dockerfile: Builds the Django web application image.
