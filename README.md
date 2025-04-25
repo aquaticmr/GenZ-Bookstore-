@@ -83,23 +83,23 @@ Typically integrates with source control (like GitHub) for automated builds.
 
 📂 Folder Structure
 your-bookstore-project/
-├── bookstore_project/  # Django project settings dir (contains settings.py, urls.py)
-├── books/              # App for book models, views, etc.
-├── accounts/           # App for user authentication
-├── cart/               # App for shopping cart logic
-├── orders/             # App for order processing and history
-├── admin_panel/        # App for custom admin views (if applicable)
-├── templates/          # Root templates folder
+├── bookstore_project/  
+├── books/             
+├── accounts/           
+├── cart/             
+├── orders/           
+├── admin_panel/        
+├── templates/        
 │   ├── base/
 │   ├── accounts/
 │   ├── books/
 │   ├── cart/
 │   ├── orders/
-│   └── admin_panel/    # (if applicable)
-├── static/             # Root static files folder (CSS, JS, Images)
-├── venv/               # Virtual environment directory (usually excluded from Git)
-├── requirements.txt    # Python package dependencies
-└── manage.py           # Django management script
+│   └── admin_panel/   
+├── static/            
+├── venv/               
+├── requirements.txt    
+└── manage.py           
 # Optional DevOps Files
 #├── Dockerfile
 #├── docker-compose.yml
