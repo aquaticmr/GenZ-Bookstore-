@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Books | Bookstore{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4 border-bottom pb-2">Books</h1>
+
+    {% if books %}
+        <div class="list-group shadow-sm">
+            {% for book in books %}
+            <div class="list-group-item list-group-item-action py-3 px-3"> {# Use action for potential hover effect #}
+                <div class="d-flex w-100 justify-content-between align-items-center">
+                    {# Left Side: Title and Author #}
+                    <div>
+                        <h5 class="mb-1">{{ book.title }}</h5>
+                        <p class="mb-1 text-muted small">By {{ book.author }}</p>
+                    </div>
+
+                    {# Right Side: Price and Button #}
+                    <div class="text-end ms-3" style="min-width: 150px;"> {# Ensure enough space #}
+                         <p class="fw-bold fs-5 mb-2">${{ book.price|floatformat:2 }}</p>
+                         <a href="{% url 'books:book_detail' book.id %}" class="btn btn-sm btn-outline-primary">View Details</a>
+                         {# Ensure 'books:book_detail' is the correct url name #}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center">
+            <h4 class="alert-heading">No Books Found</h4>
+            <p>There are currently no books listed.</p>
+        </div>
+    {% endif %}
+
+    {# --- Pagination Section (remains the same) --- #}
+    {% if is_paginated %}
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1" aria-label="First">« First</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">‹ Previous</a></li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">« First</span></li>
+                <li class="page-item disabled"><span class="page-link">‹ Previous</span></li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}<li class="page-item active" aria-current="page"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}<li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}<li class="page-item disabled"><span class="page-link">...</span></li>{% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">Next ›</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">Last »</a></li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Next ›</span></li>
+                <li class="page-item disabled"><span class="page-link">Last »</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+    {# --- End of Pagination Section --- #}
+
+</div> {# End container #}
+{% endblock %}
