@@ -1,6 +1,6 @@
-# 📚 Django Bookstore Project
+# 📚 Django Bookstore Application
 
-A full-stack Django application like Amazon but only for books, specifically for managing and ordering books. It includes full user authentication, a session-based cart, custom admin panel, and DevOps integration with Docker and Jenkins.
+A web application built with Django for browsing, purchasing, and managing books online. Features user accounts, a shopping cart, order management, and an admin interface, all styled with Bootstrap 5.
 
 ---
 
@@ -8,86 +8,99 @@ A full-stack Django application like Amazon but only for books, specifically for
 
 This project allows users to:
 
-- Browse all books without logging in
-- View detailed information about each book
-- Register/Login to add books to the cart
-- View and confirm orders
-- Track order history
-- Admin users can manage books and orders via a custom admin panel (no Django Admin used)
-
-All functionalities are built using **Class-Based Views (CBVs)** and **manual HTML forms** — no Django forms or function-based views (FBVs).
+*   Browse book listings & view detailed information about each book.
+*   Register for a new account and log in/out.
+*   Add/update/remove books from a shopping cart.
+*   Proceed through a checkout process to place orders.
+*   View their order history.
+*   (If applicable) Admins can manage books and orders through a dedicated interface.
+*   Experience a modern user interface built with Bootstrap 5 and Bootstrap Icons.
 
 ---
 
 ## ⚙️ Setup & Run Instructions
 
 ### ✅ Prerequisites
-- Docker Desktop installed
-- Git installed
+
+*   Python 3.x installed
+*   `pip` (Python package installer) installed
+*   Git installed
 
 ### 📦 Clone the Project
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-bookstore-project🛠️ Local Setup
+Create and Activate Virtual Environment:
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
 
-```bash
-git clone <your-repo-url>
-cd bookstore_project
-🐳 Run with Docker Compose
-- docker compose up --build
-The app will be available at: http://localhost:8000
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+Use code with caution.
+Bash
 
-🧑‍💻 Create Admin User
-- docker compose exec web python manage.py shell < init_admin.py
-``` 
-### 🧰 Tech Stack
-Backend: Django (Python)
+Install Dependencies:
+(Ensure you have created a requirements.txt file: pip freeze > requirements.txt)
+pip install -r requirements.txt
+Use code with caution.
+Bash
 
-Frontend: HTML, CSS (Bootstrap)
+Apply Database Migrations:
+python manage.py migrate
+Use code with caution.
+Bash
 
-Database: SQLite (can be swapped with PostgreSQL)
+Create Superuser (for Django Admin or initial access):
+python manage.py createsuperuser
+Use code with caution.
+Bash
 
-DevOps: Docker, Docker Compose, Jenkins
+(Follow the prompts to create an admin account)
+Run the Development Server:
+python manage.py runserver
+Use code with caution.
+Bash
 
-### 📸 Screenshots
-1. ![WhatsApp Image 2025-04-20 at 23 18 21_f4b2e8cd](https://github.com/user-attachments/assets/00624b98-1e96-4642-8212-2032843c79b2)
-2. ![WhatsApp Image 2025-04-20 at 23 20 54_f92c6916](https://github.com/user-attachments/assets/7558be2c-8781-4ca2-93d7-36e780e85ed8)
-3. ![WhatsApp Image 2025-04-20 at 23 21 02_82068fa9](https://github.com/user-attachments/assets/cb150eed-2468-4d22-9f6a-6aa443befe64)
-4. ![WhatsApp Image 2025-04-20 at 23 28 51_ce625ab3](https://github.com/user-attachments/assets/5cf0214f-7f8e-492c-9e65-6c9f96486d89)
+Access the Application:
+Open your web browser and go to: http://127.0.0.1:8000/
+🧰 Tech Stack
+Backend: Django (Python Web Framework)
+Frontend: HTML, CSS, Bootstrap 5, Bootstrap Icons
+Database: SQLite (Default for development, easily swappable with PostgreSQL, MySQL, etc.)
+(Optional) DevOps: Docker, Jenkins (if implemented)
 
+🐳 (Optional) Docker Notes
+(Include this section if you have Docker configured, otherwise remove it)
+Dockerfile: Builds the Django web application image.
+docker-compose.yml: Defines the web service (and potentially database service).
+Run Command: docker compose up --build
+Access: http://localhost:8000 (or as configured in docker-compose.yml)
+🔁 (Optional) Jenkins CI/CD
+(Include this section if you have Jenkins configured, otherwise remove it)
+Jenkinsfile: Defines the pipeline stages (e.g., build, test, deploy).
+Typically integrates with source control (like GitHub) for automated builds.
 
-### 🐳 Docker Notes
-Dockerfile: builds the Django web app
-
-docker-compose.yml: defines the web service and database
-
-Uses volume mounts for live code reloads
-
-Accessible at: http://localhost:8000
-
-### 🔁 Jenkins CI/CD
-Jenkinsfile is included for CI/CD:
-
-Runs tests
-
-Builds Docker image
-
-Deploys the container
-
-You can connect Jenkins to your GitHub repo and set up automatic builds on push.
-
-### 📂 Folder Structure
-```
-bookstore_project/
-├── books/
-├── accounts/
-├── cart/
-├── orders/
-├── admin_panel/
-├── templates/
-├── static/
-├── Dockerfile
-├── docker-compose.yml
-├── Jenkinsfile
-├── init_admin.py
-└── manage.py
-```
-### 📜 License
-This project is for educational use only.
+📂 Folder Structure
+your-bookstore-project/
+├── bookstore_project/  # Django project settings dir (contains settings.py, urls.py)
+├── books/              # App for book models, views, etc.
+├── accounts/           # App for user authentication
+├── cart/               # App for shopping cart logic
+├── orders/             # App for order processing and history
+├── admin_panel/        # App for custom admin views (if applicable)
+├── templates/          # Root templates folder
+│   ├── base/
+│   ├── accounts/
+│   ├── books/
+│   ├── cart/
+│   ├── orders/
+│   └── admin_panel/    # (if applicable)
+├── static/             # Root static files folder (CSS, JS, Images)
+├── venv/               # Virtual environment directory (usually excluded from Git)
+├── requirements.txt    # Python package dependencies
+└── manage.py           # Django management script
+# Optional DevOps Files
+#├── Dockerfile
+#├── docker-compose.yml
+#├── Jenkinsfile
