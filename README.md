@@ -97,21 +97,17 @@ Typically integrates with source control (like GitHub) for automated builds.
 ```
 📂 Folder Structure
 GenzBookstore/
-├── bookstore_project/  
-├── books/             
-├── accounts/           
-├── cart/             
-├── orders/           
-├── admin_panel/        
-├── templates/        
-│   ├── base/
-│   ├── accounts/
-│   ├── books/
-│   ├── cart/
-│   ├── orders/
-│   └── admin_panel/   
-├── static/            
-├── venv/               
-├── requirements.txt    
+
+├── books/
+├── accounts/
+├── cart/
+├── orders/
+├── admin_panel/
+├── templates/
+├── static/
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── init_admin.py
 └── manage.py
 ```       
