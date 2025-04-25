@@ -82,6 +82,7 @@ Shopping Cart:
 Login/Signup Page:
 ![Screenshot 2025-04-25 101931](https://github.com/user-attachments/assets/8f6deca0-7618-4bea-8c48-0b4fc02184a6)
 ![Screenshot 2025-04-25 102000](https://github.com/user-attachments/assets/06522a34-8d8c-428c-9247-f3764b6dd782)
+![image](https://github.com/user-attachments/assets/cb7fe17f-7ddb-4231-b9aa-15bac90cb670)
 
 
 🐳 (Optional) Docker Notes
