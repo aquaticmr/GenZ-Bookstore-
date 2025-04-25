@@ -27,7 +27,7 @@ This project allows users to:
 *   Git installed
 
 ### 📦 Clone the Project
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/aquaticmr/GenZ-Bookstore-.git
 cd your-bookstore-project🛠️ Local Setup
 Create and Activate Virtual Environment:
 # Windows
@@ -80,9 +80,9 @@ Access: http://localhost:8000 (or as configured in docker-compose.yml)
 (Include this section if you have Jenkins configured, otherwise remove it)
 Jenkinsfile: Defines the pipeline stages (e.g., build, test, deploy).
 Typically integrates with source control (like GitHub) for automated builds.
-
+```
 📂 Folder Structure
-your-bookstore-project/
+GenzBookstore/
 ├── bookstore_project/  
 ├── books/             
 ├── accounts/           
@@ -99,8 +99,5 @@ your-bookstore-project/
 ├── static/            
 ├── venv/               
 ├── requirements.txt    
-└── manage.py           
-# Optional DevOps Files
-#├── Dockerfile
-#├── docker-compose.yml
-#├── Jenkinsfile
+└── manage.py
+```       
